@@ -1,0 +1,24 @@
+<div class="row ">
+    <div class="col-md-12 ">
+        <h2 class="text-primary">Angular 2 / Angular 4 / Angular 5 Search Filter Pipe</h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action "
+                        *ngFor="let item of list | paginate: { itemsPerPage: 5, currentPage: p } ">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{item.first_name}}</h5>
+                            <small>Id : {{item.id}}</small>
+                        </div>
+                        <p class="mb-1">{{item.email}}</p>
+                        <small>{{item.city}}</small>
+                    </a>
+
+                </div>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>
